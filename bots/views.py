@@ -1,5 +1,5 @@
-from bots.models import Bot
-from bots.serializers import BotSerializer
+from bots.models import Bot, Message
+from bots.serializers import BotSerializer, MessageSerializer
 from rest_framework import generics
 
 
@@ -11,4 +11,14 @@ class BotMain(generics.ListCreateAPIView):
 class BotDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bot.objects.all()
     serializer_class = BotSerializer
+
+
+class MessageMain(generics.ListCreateAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+
+
+class MessageDetail(generics.RetrieveAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
 

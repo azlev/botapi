@@ -8,4 +8,6 @@ from bots import views
 urlpatterns = [
     path('bots', views.BotMain.as_view()),
     path('bots/<uuid:pk>', views.BotDetail.as_view()),
+    path('messages', views.MessageMain.as_view()),
+    path('messages/<uuid:pk>', views.MessageDetail.as_view()),
 ]
