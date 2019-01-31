@@ -12,3 +12,10 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      - BOTAPI_DB_HOST=db
+      - BOTAPI_DB_PORT=5432
+      - BOTAPI_DB_NAME=postgres
+      - BOTAPI_DB_USERNAME=postgres
+      - BOTAPI_DB_PASSWORD=postgres
+

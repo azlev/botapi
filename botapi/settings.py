@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'botapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ['BOTAPI_DB_HOST'],
+        'PORT': int(os.environ['BOTAPI_DB_PORT']),
+        'NAME': os.environ['BOTAPI_DB_NAME'],
+        'USER': os.environ['BOTAPI_DB_USERNAME'],
+        'PASSWORD': os.environ['BOTAPI_DB_PASSWORD'],
     }
 }
 
