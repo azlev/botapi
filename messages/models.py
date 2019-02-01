@@ -32,10 +32,10 @@ class Message(models.Model):
     def from_db(cls, db, field_names, values):
         message = super().from_db(db, field_names, values)
         if message.direction == 'F':
-            message.from_ = message.bot
+            message.from_ = message.bot_id
             message.to = message.client
         else:
-            message.to = message.bot
+            message.to = message.bot_id
             message.from_ = message.client
         return message
 
