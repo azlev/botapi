@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'bots.apps.BotsConfig',
+    'messages.apps.MessagesConfig',
     'rest_framework',
     'django.contrib.auth',
     'django.contrib.contenttypes',

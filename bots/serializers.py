@@ -1,4 +1,4 @@
-from bots.models import Bot, Message
+from bots.models import Bot
 from rest_framework import serializers
 
 class BotSerializer(serializers.ModelSerializer):
@@ -6,8 +6,3 @@ class BotSerializer(serializers.ModelSerializer):
         model = Bot
         fields = ('id', 'name')
 
-
-class MessageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Message
-        fields = ('id', 'conversationId', 'timestamp', 'bot', 'direction', 'client', 'text')
