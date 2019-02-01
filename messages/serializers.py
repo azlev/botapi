@@ -14,7 +14,6 @@ class MessageSerializer(serializers.Serializer):
     text = serializers.CharField(required=True)
 
     def create(self, validated_data):
-        print(validated_data)
         m = Message()
         m.conversationId = validated_data['conversationId']
         m.timestamp = validated_data['timestamp']

@@ -16,7 +16,6 @@ class MessageMain(APIView):
         pass
 
     def post(self, request):
-        print(request.data)
         serializer = MessageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
