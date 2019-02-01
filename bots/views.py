@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class BotMain(generics.ListCreateAPIView):
+class BotMain(generics.CreateAPIView):
     queryset = Bot.objects.all()
     serializer_class = BotSerializer
 
