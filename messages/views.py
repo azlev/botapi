@@ -13,7 +13,11 @@ class MessageMain(APIView):
     This logic is not just crud, hence APIView is better suitable
     """
     def get(self, request):
-        pass
+        conversationId = request.query_params.get("conversationId", None)
+        messages = Message.objects.filter(conversationId=conversationId).order_by("timestamp")
+        serializer = MessageSerializer(messages, many=True)
+        return Response(serializer.data)
+
 
     def post(self, request):
         serializer = MessageSerializer(data=request.data)
