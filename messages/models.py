@@ -24,6 +24,7 @@ class Message(models.Model):
     client = models.UUIDField(null=False)
     text = models.TextField(null=False)
 
+    # from is a reserved word
     from_ = None
     to    = None
 
